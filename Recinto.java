@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recinto {
@@ -42,6 +43,7 @@ public class Recinto {
         this.id = id;
         this.ubicacion = ubicacion;
         this.capacidad = capacidad;
+        this.eventos = new ArrayList<>();
     }
 
     public void agregarEvento(Evento evento) {
