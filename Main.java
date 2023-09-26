@@ -4,13 +4,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Crear algunos objetos de ejemplo
-        Pais pais1 = new Pais(1, "País 1");
         Ubicacion ubicacion1 = new Ubicacion("Ubicación 1");
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
 
         Evento evento1 = new Evento();
         evento1.setId(1);
-        evento1.setPais(pais1);
+        evento1.setPais(1);
         evento1.setArtista("Artista 1");
         evento1.setHorario(1800); // Ejemplo de horario en formato militar (18:00)
         evento1.setFecha(new Date());
@@ -38,7 +37,8 @@ public class Main {
 
                     // Aquí puedes buscar el recinto por su ID y mostrar sus eventos
                     // Puedes implementar esta lógica utilizando las clases y métodos adecuados
-                    // Por ejemplo, puedes iterar sobre los eventos del recinto y mostrar sus detalles.
+                    // Por ejemplo, puedes iterar sobre los eventos del recinto y mostrar sus
+                    // detalles.
 
                     break;
                 case 2:

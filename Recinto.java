@@ -46,6 +46,9 @@ public class Recinto {
         this.eventos = new ArrayList<>();
     }
 
+    public Recinto() {
+    }
+
     public void agregarEvento(Evento evento) {
         eventos.add(evento);
     }

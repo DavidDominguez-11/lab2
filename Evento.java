@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Evento {
     private int id;
-    private Pais pais;
+    private int pais;
     private String artista;
     private int horario;
     private Date fecha;
@@ -22,8 +22,8 @@ public class Evento {
         return pais;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setPais(int i) {
+        this.pais = i;
     }
 
     public String getArtista() {
@@ -64,5 +64,8 @@ public class Evento {
 
     public void setCantidadAsistentes(int cantidadAsistentes) {
         this.cantidadAsistentes = cantidadAsistentes;
+    }
+
+    public void setPais(int parseInt) {
     }
 }

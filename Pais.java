@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Pais {
     private int id;
-    private String nombre;
     private List<Ubicacion> ubicaciones;
 
     public int getId() {
@@ -14,14 +13,6 @@ public class Pais {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public List<Ubicacion> getUbicaciones() {
         return ubicaciones;
     }
@@ -30,9 +21,8 @@ public class Pais {
         this.ubicaciones = ubicaciones;
     }
 
-    public Pais(int id, String nombre) {
+    public Pais(int id) {
         this.id = id;
-        this.nombre = nombre;
         this.ubicaciones = new ArrayList<>();
     }
 
