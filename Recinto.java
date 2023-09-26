@@ -49,9 +49,23 @@ public class Recinto {
     public Recinto() {
     }
 
-    public void agregarEvento(Evento evento) {
-        eventos.add(evento);
+    public void asignarEventos(ArrayList<Evento> eventos) {
+        for (Evento evento : eventos) {
+            // verificar si el recinto tiene capacidad para el evento
+            if (this.capacidad >= evento.getCantidadAsistentes()) {
+                
+                // se agrega
+                this.eventos.add(evento);
+
+                // cctualizar la capacidad del recinto
+                this.capacidad -= evento.getCantidadAsistentes();
+                System.out.println("Evento '" + evento.getNombre() + "' asignado al recinto " + this.id);
+            } else {
+                System.out.println("No hay capacidad suficiente en el recinto " + this.id + " para el evento '" + evento.getNombre() + "'");
+            }
+        }
     }
+    
 
     // Otros métodos, como getters y setters.
 }

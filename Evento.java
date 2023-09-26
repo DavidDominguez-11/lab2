@@ -8,6 +8,19 @@ public class Evento {
     private Date fecha;
     private int duracion;
     private int cantidadAsistentes;
+    private String nombre;
+
+    // construcotr
+    public Evento(int id, int pais, String artista, int horario, Date fecha, int duracion, int cantidadAsistentes, String nombre) {
+        this.id = id;
+        this.pais = pais;
+        this.artista = artista;
+        this.horario = horario;
+        this.fecha = fecha;
+        this.duracion = duracion;
+        this.cantidadAsistentes = cantidadAsistentes;
+        this.nombre = nombre;
+    }
 
     // Constructor, getters y setters
     public int getId() {
@@ -18,7 +31,15 @@ public class Evento {
         this.id = id;
     }
 
-    public Pais getPais() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getPais() {
         return pais;
     }
 
@@ -66,6 +87,4 @@ public class Evento {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
-    public void setPais(int parseInt) {
-    }
 }
