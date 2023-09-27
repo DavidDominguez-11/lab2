@@ -44,36 +44,30 @@ public class LectorArchivoCSV {
             String recintosLine;
             while ((recintosLine = recintosReader.readLine()) != null) {
                 String[] recintoData = recintosLine.split("\\|");
-
                 Recinto recinto = new Recinto();
-                recinto.setUbicacion(new Ubicacion(recintoData[1]));
-                recinto.setId(Integer.parseInt(recintoData[2]));
-                recinto.setCapacidad(Integer.parseInt(recintoData[3]));
+                int idPais = Integer.parseInt(recintoData[0]);
+                String ubicacion = recintoData[1];
+                int idRecinto = Integer.parseInt(recintoData[2]);
+                int capacidad = Integer.parseInt(recintoData[3]);
 
-                Pais paisExistente = null;
+                Pais idPaisExistente = null;
                 for (Pais pais : paises) {
-                    if (sucursal.getNombre().equals(nombreSucursal)) {
-                        sucursalExistente = sucursal;
+                    if (pais.getId() == idPais) {
+                        idPaisExistente = pais;
                         break;
                     }
                 }
+                if (idPaisExistente == null) {
+                    idPaisExistente = new Pais(idPais);
+                    paises.add(idPaisExistente);
+                }
+
             }
             recintosReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return paises;
 
-        return recintos;
-    }
-
-    public void escribirCSV(List<String[]> contenidoCSV) {
-        try (FileWriter writer = new FileWriter(rutaArchivo)) {
-            for (String[] fila : contenidoCSV) {
-                String filaCSV = String.join("|", fila);
-                writer.write(filaCSV + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

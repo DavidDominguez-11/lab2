@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Recinto {
     private int id;
-    private Ubicacion ubicacion;
+    private String ubicacion;
     private int capacidad;
     private List<Evento> eventos;
 
@@ -15,11 +15,11 @@ public class Recinto {
         this.id = id;
     }
 
-    public Ubicacion getUbicacion() {
+    public String getUbicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(Ubicacion ubicacion) {
+    public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
@@ -39,7 +39,7 @@ public class Recinto {
         this.eventos = eventos;
     }
 
-    public Recinto(int id, Ubicacion ubicacion, int capacidad) {
+    public Recinto(int id, String ubicacion, int capacidad) {
         this.id = id;
         this.ubicacion = ubicacion;
         this.capacidad = capacidad;
