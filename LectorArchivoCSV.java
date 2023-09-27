@@ -44,30 +44,45 @@ public class LectorArchivoCSV {
             String recintosLine;
             while ((recintosLine = recintosReader.readLine()) != null) {
                 String[] recintoData = recintosLine.split("\\|");
-                Recinto recinto = new Recinto();
                 int idPais = Integer.parseInt(recintoData[0]);
                 String ubicacion = recintoData[1];
                 int idRecinto = Integer.parseInt(recintoData[2]);
                 int capacidad = Integer.parseInt(recintoData[3]);
 
-                Pais idPaisExistente = null;
+                Pais paisExistente = null;
                 for (Pais pais : paises) {
                     if (pais.getId() == idPais) {
-                        idPaisExistente = pais;
+                        paisExistente = pais;
                         break;
                     }
                 }
-                if (idPaisExistente == null) {
-                    idPaisExistente = new Pais(idPais);
-                    paises.add(idPaisExistente);
+
+                if (paisExistente == null) {
+                    paisExistente = new Pais(idPais);
+                    paises.add(paisExistente);
                 }
 
+                Ubicacion ubicacionExistente = null;
+                for (Ubicacion ubic : paisExistente.getUbicaciones()) {
+                    if (ubic.getNombre_ubicacion().equals(ubicacion)) {
+                        ubicacionExistente = ubic;
+                        break;
+                    }
+                }
+
+                if (ubicacionExistente == null) {
+                    ubicacionExistente = new Ubicacion(ubicacion);
+                    paisExistente.getUbicaciones().add(ubicacionExistente);
+                }
+
+                Recinto recinto = new Recinto(idRecinto, ubicacionExistente.getNombre_ubicacion(), capacidad);
+                ubicacionExistente.getRecintos().add(recinto);
             }
             recintosReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return paises;
-
     }
+
 }
