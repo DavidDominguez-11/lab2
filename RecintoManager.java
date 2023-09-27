@@ -1,11 +1,16 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class RecintoManager {
-    private List<Recinto> recintos; // Debes proporcionar una lista de recintos disponibles.
+    private List<Recinto> recintos;
+    private List<Evento> eventosAsignados;
+    private List<Evento> eventosNoAsignados;
 
     public RecintoManager(List<Recinto> recintos) {
         this.recintos = recintos;
+        this.eventosAsignados = new ArrayList<>();
+        this.eventosNoAsignados = new ArrayList<>();
     }
 
     public void asignarEventosEnPaises(List<Pais> paises, List<Evento> eventos) {
@@ -29,7 +34,22 @@ public class RecintoManager {
 
     private void asignarEventosEnRecintos(List<Recinto> recintos, List<Evento> eventos) {
         for (Recinto recinto : recintos) {
-            recinto.asignarEventos(eventos);
+            for (Evento evento : eventos) {
+                if (recinto.getCapacidad() >= evento.getCantidadAsistentes()) {
+                    recinto.asignarEventos(Collections.singletonList(evento));
+                    eventosAsignados.add(evento);
+                } else {
+                    eventosNoAsignados.add(evento);
+                }
+            }
         }
+    }
+
+    public List<Evento> getEventosAsignados() {
+        return eventosAsignados;
+    }
+    
+    public List<Evento> getEventosNoAsignados() {
+        return eventosNoAsignados;
     }
 }
