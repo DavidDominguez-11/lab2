@@ -1,3 +1,4 @@
+import java.security.Identity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,14 +9,12 @@ public class Main {
         ArrayList<Pais> paises = new ArrayList<Pais>();
         String path = "evento.csv";
         LectorArchivoCSV.cargarRecintosDesdeCSV("recinto.csv", paises);
-        // Crear algunos objetos de ejemplo
-        String ubicacion1 = "Ubicación 1";
-        Recinto recinto1 = new Recinto(1, ubicacion1, 1000, 10);
+
 
         // Asignar el evento al recinto
         // recinto1.agregarEvento(evento1); este ya no es el metodo
         ArrayList<Evento> eventos = LectorArchivoCSV.cargarEventosDesdeCSV(path);
-        recinto1.asignarEventos(eventos);
+
 
         // Crear un objeto Scanner para recibir la entrada del usuario
         Scanner scanner = new Scanner(System.in);
@@ -74,11 +73,24 @@ public class Main {
         
     }
 
-    private static Recinto buscarRecintoPorID(int idRecinto, List<Pais> paises) {
+    private static Recinto buscarRecintoPorID(int idRecinto, List<Pais> paises, int idPais, String ubicacion) {
         for (Pais pais : paises) {
-            for (Recinto recinto : pais.getRecintos()) {
-                if (recinto.getId() == idRecinto) {
-                    return recinto;
+            if (pais.getId() == idPais) {
+                for (Ubicacion ubicacion1 : pais.getUbicaciones()){
+                    if (ubicacion1.getNombre_ubicacion() == ubicacion){
+                        for(Recinto recinto1 : ubicacion1.getRecintos()){
+                            if (recinto1.getId() == idRecinto){
+                                for (Evento evento1 : recinto1.getEventos()){
+                                    System.out.println("Evento: " + evento1.getId());
+                                    System.out.println("Evento: " + evento1.getPais());
+                                    System.out.println("Evento: " + evento1.getArtista());
+                                    System.out.println("Evento: " + evento1.getHorario());
+                                    System.out.println("Evento: " + evento1.getFecha());
+                                    System.out.println("Evento: " + evento1.getCantidadAsistentes());
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

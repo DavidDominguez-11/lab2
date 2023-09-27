@@ -8,8 +8,11 @@ import java.util.ArrayList;
 public class LectorArchivoCSV {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
+    private static ArrayList<Recinto> TotalRecintos = new ArrayList<>();
+    
     public static ArrayList<Evento> cargarEventosDesdeCSV(String eventosCsvFile) {
         ArrayList<Evento> eventos = new ArrayList<>();
+        
 
         try {
             BufferedReader eventosReader = new BufferedReader(new FileReader(eventosCsvFile));
@@ -76,12 +79,17 @@ public class LectorArchivoCSV {
 
                 Recinto recinto = new Recinto(idRecinto, ubicacionExistente.getNombre_ubicacion(), capacidad, idPais);
                 ubicacionExistente.getRecintos().add(recinto);
+                TotalRecintos.add(recinto);
             }
             recintosReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return paises;
+    }
+
+    public static  ArrayList<Recinto> getRecintos(){
+        return TotalRecintos;
     }
 
 }

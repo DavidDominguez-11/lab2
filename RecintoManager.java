@@ -24,7 +24,7 @@ public class RecintoManager {
         List<Recinto> recintosEnPais = new ArrayList<>();
         
         for (Recinto recinto : recintos) {
-            if (recinto.getPais() == pais) {
+            if (recinto.getIdPais() == pais.getId()) {
                 recintosEnPais.add(recinto);
             }
         }

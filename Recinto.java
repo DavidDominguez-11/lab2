@@ -8,6 +8,14 @@ public class Recinto {
     private List<Evento> eventos;
     private int idPais;
 
+    public int getIdPais() {
+        return idPais;
+    }
+
+    public void setIdPais(int idPais) {
+        this.idPais = idPais;
+    }
+
     public int getId() {
         return id;
     }
