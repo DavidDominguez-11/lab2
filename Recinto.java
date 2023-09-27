@@ -66,6 +66,15 @@ public class Recinto {
             }
         }
     }
+    private Pais pais;
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
 
     // Otros métodos, como getters y setters.
 }
