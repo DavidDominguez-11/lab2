@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -12,19 +11,9 @@ public class Main {
         String ubicacion1 = "Ubicación 1";
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
 
-        // aqui ahora hay que pasarlo como parametros
-        Evento evento1 = new Evento();
-        evento1.setId(1);
-        evento1.setPais(1);
-        evento1.setArtista("Artista 1");
-        evento1.setHorario(1800); // Ejemplo de horario en formato militar (18:00)
-        evento1.setFecha(new Date());
-        evento1.setDuracion(120); // Duración en minutos
-        evento1.setCantidadAsistentes(500);
-
         // Asignar el evento al recinto
         // recinto1.agregarEvento(evento1); este ya no es el metodo
-        List<Evento> eventos = LectorArchivoCSV.cargarEventosDesdeCSV(path);
+        ArrayList<Evento> eventos = LectorArchivoCSV.cargarEventosDesdeCSV(path);
         recinto1.asignarEventos(eventos);
 
         // Crear un objeto Scanner para recibir la entrada del usuario

@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Ubicacion {
     private String nombre_ubicacion;
-    private List<Recinto> recintos;
+    private ArrayList<Recinto> recintos;
 
     public String getNombre_ubicacion() {
         return nombre_ubicacion;
@@ -13,11 +12,11 @@ public class Ubicacion {
         this.nombre_ubicacion = nombre_ubicacion;
     }
 
-    public List<Recinto> getRecintos() {
+    public ArrayList<Recinto> getRecintos() {
         return recintos;
     }
 
-    public void setRecintos(List<Recinto> recintos) {
+    public void setRecintos(ArrayList<Recinto> recintos) {
         this.recintos = recintos;
     }
 

@@ -1,18 +1,15 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class LectorArchivoCSV {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
 
-    public static List<Evento> cargarEventosDesdeCSV(String eventosCsvFile) {
-        List<Evento> eventos = new ArrayList<>();
+    public static ArrayList<Evento> cargarEventosDesdeCSV(String eventosCsvFile) {
+        ArrayList<Evento> eventos = new ArrayList<>();
 
         try {
             BufferedReader eventosReader = new BufferedReader(new FileReader(eventosCsvFile));

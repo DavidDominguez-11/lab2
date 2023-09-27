@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Pais {
     private int id;
-    private List<Ubicacion> ubicaciones;
+    private ArrayList<Ubicacion> ubicaciones;
 
     public int getId() {
         return id;
@@ -13,11 +12,11 @@ public class Pais {
         this.id = id;
     }
 
-    public List<Ubicacion> getUbicaciones() {
+    public ArrayList<Ubicacion> getUbicaciones() {
         return ubicaciones;
     }
 
-    public void setUbicaciones(List<Ubicacion> ubicaciones) {
+    public void setUbicaciones(ArrayList<Ubicacion> ubicaciones) {
         this.ubicaciones = ubicaciones;
     }
 
