@@ -53,19 +53,19 @@ public class Recinto {
         for (Evento evento : eventos) {
             // verificar si el recinto tiene capacidad para el evento
             if (this.capacidad >= evento.getCantidadAsistentes()) {
-                
+
                 // se agrega
                 this.eventos.add(evento);
 
                 // cctualizar la capacidad del recinto
                 this.capacidad -= evento.getCantidadAsistentes();
-                System.out.println("Evento '" + evento.getNombre() + "' asignado al recinto " + this.id);
+                System.out.println("Evento '" + evento.getId() + "' asignado al recinto " + this.id);
             } else {
-                System.out.println("No hay capacidad suficiente en el recinto " + this.id + " para el evento '" + evento.getNombre() + "'");
+                System.out.println("No hay capacidad suficiente en el recinto " + this.id + " para el evento '"
+                        + evento.getId() + "'");
             }
         }
     }
-    
 
     // Otros métodos, como getters y setters.
 }
