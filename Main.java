@@ -4,9 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Crear algunos objetos de ejemplo
-        Ubicacion ubicacion1 = new Ubicacion("Ubicación 1");
+        String ubicacion1 = "Ubicación 1";
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
-
 
         // aqui ahora hay que pasarlo como parametros
         Evento evento1 = new Evento();
@@ -19,7 +18,7 @@ public class Main {
         evento1.setCantidadAsistentes(500);
 
         // Asignar el evento al recinto
-        // recinto1.agregarEvento(evento1);  este ya no es el metodo
+        // recinto1.agregarEvento(evento1); este ya no es el metodo
         recinto1.asignarEventos();
 
         // Crear un objeto Scanner para recibir la entrada del usuario
