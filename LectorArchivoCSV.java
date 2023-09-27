@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class LectorArchivoCSV {
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public static ArrayList<Evento> cargarEventosDesdeCSV(String eventosCsvFile) {
         ArrayList<Evento> eventos = new ArrayList<>();
