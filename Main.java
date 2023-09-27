@@ -31,9 +31,13 @@ public class Main {
                 case 1:
                     System.out.print("Ingrese el ID del recinto: ");
                     int idRecinto = scanner.nextInt();
+                    System.out.print("Ingrese el ID del pais: ");
+                    int idPais = scanner.nextInt();
+                    System.out.print("Ingrese ubicacion del pais: ");
+                    String ubicacion = scanner.nextLine();
 
                     // Buscar el recinto por su ID
-                    Recinto recintoSeleccionado = buscarRecintoPorID(idRecinto, paises);
+                    Recinto recintoSeleccionado = buscarRecintoPorID(idRecinto, paises, idPais, ubicacion);
 
                     if (recintoSeleccionado != null) {
                         // Mostrar los eventos en el recinto
