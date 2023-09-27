@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
- 
+
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Pais> paises = new ArrayList<Pais>();
         String path = "evento.csv";
+        LectorArchivoCSV.cargarRecintosDesdeCSV("recinto.csv", paises);
         // Crear algunos objetos de ejemplo
         String ubicacion1 = "Ubicación 1";
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
