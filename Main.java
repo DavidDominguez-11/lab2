@@ -5,7 +5,7 @@ import java.util.Scanner;
  
 public class Main {
     public static void main(String[] args) {
-        String path = "evento.csv"; 
+        String path = "evento.csv";
         // Crear algunos objetos de ejemplo
         String ubicacion1 = "Ubicación 1";
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);

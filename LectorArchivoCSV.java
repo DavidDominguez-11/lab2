@@ -17,6 +17,7 @@ public class LectorArchivoCSV {
         try {
             BufferedReader eventosReader = new BufferedReader(new FileReader(eventosCsvFile));
             String eventosLine;
+            eventosReader.readLine();
             while ((eventosLine = eventosReader.readLine()) != null) {
                 String[] eventoData = eventosLine.split("\\|");
 
@@ -38,10 +39,11 @@ public class LectorArchivoCSV {
         return eventos;
     }
 
-    public static List<Pais> cargarRecintosDesdeCSV(String recintosCsvFile, List<Pais> paises) {
+    public static ArrayList<Pais> cargarRecintosDesdeCSV(String recintosCsvFile, ArrayList<Pais> paises) {
         try {
             BufferedReader recintosReader = new BufferedReader(new FileReader(recintosCsvFile));
             String recintosLine;
+            recintosReader.readLine();
             while ((recintosLine = recintosReader.readLine()) != null) {
                 String[] recintoData = recintosLine.split("\\|");
                 int idPais = Integer.parseInt(recintoData[0]);
