@@ -36,13 +36,14 @@ public class RecintoManager {
         for (Recinto recinto : recintos) {
             for (Evento evento : eventos) {
                 // Verificar si el país del evento coincide con el país del recinto
-                if (evento.getPais() == recinto.getPais()) {
+                if (evento.getPais() == recinto.getIdPais()) {
                     // Verificar si la ubicación del evento coincide con la ubicación del recinto
                     if (evento.getUbicacion().equals(recinto.getUbicacion())) {
                         // Verificar si el recinto tiene capacidad suficiente
                         if (recinto.getCapacidad() >= evento.getCantidadAsistentes()) {
                             // Verificar si el recinto tiene eventos previos
                             boolean hayConflicto = false;
+                            
                             for (Evento eventoExistente : recinto.getEventos()) {
                                 if (hayConflicto(eventoExistente, evento)) {
                                     hayConflicto = true;
