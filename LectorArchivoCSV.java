@@ -5,14 +5,21 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * Clase para leer eventos desde un archivo CSV.
+ */
 public class LectorArchivoCSV {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
     private static ArrayList<Recinto> TotalRecintos = new ArrayList<>();
-    
+
+    /**
+     * Carga eventos desde un archivo CSV.
+     *
+     * @param eventosCsvFile Ruta del archivo CSV de eventos.
+     * @return Lista de eventos cargados.
+     */
     public static ArrayList<Evento> cargarEventosDesdeCSV(String eventosCsvFile) {
         ArrayList<Evento> eventos = new ArrayList<>();
-        
 
         try {
             BufferedReader eventosReader = new BufferedReader(new FileReader(eventosCsvFile));
@@ -39,6 +46,13 @@ public class LectorArchivoCSV {
         return eventos;
     }
 
+    /**
+     * Carga recintos desde un archivo CSV.
+     *
+     * @param recintosCsvFile Ruta del archivo CSV de recintos.
+     * @param paises          Lista de países existentes.
+     * @return Lista de países actualizada con recintos.
+     */
     public static ArrayList<Pais> cargarRecintosDesdeCSV(String recintosCsvFile, ArrayList<Pais> paises) {
         try {
             BufferedReader recintosReader = new BufferedReader(new FileReader(recintosCsvFile));
@@ -88,8 +102,12 @@ public class LectorArchivoCSV {
         return paises;
     }
 
-    public static  ArrayList<Recinto> getRecintos(){
+    /**
+     * Obtiene la lista de recintos.
+     *
+     * @return La lista de recintos.
+     */
+    public static ArrayList<Recinto> getRecintos() {
         return TotalRecintos;
     }
-
 }
