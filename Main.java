@@ -39,7 +39,7 @@ public class Main {
                     // Buscar el recinto por su ID
                     Recinto recintoSeleccionado = buscarRecintoPorID(idRecinto, paises, idPais, ubicacion);
 
-                    if (recintoSeleccionado != null) {
+                    if (recintoSeleccionado == null) {
                         // Mostrar los eventos en el recinto
                         List<Evento> eventosEnRecinto = recintoSeleccionado.getEventos();
                         
