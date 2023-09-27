@@ -25,6 +25,10 @@ public class Pais {
         this.ubicaciones = new ArrayList<>();
     }
 
+    public Recinto[] getRecintos() {
+        return null;
+    }
+
     // Otros métodos, como getters y setters, para manipular la lista de
     // ubicaciones.
 }

@@ -65,4 +65,8 @@ public class Evento {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    public String getNombre() {
+        return null;
+    }
+
 }

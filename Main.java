@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -32,12 +33,34 @@ public class Main {
                     System.out.print("Ingrese el ID del recinto: ");
                     int idRecinto = scanner.nextInt();
 
+                    // Buscar el recinto por su ID
+                    Recinto recintoSeleccionado = buscarRecintoPorID(idRecinto, paises);
+
+                    if (recintoSeleccionado != null) {
+                        // Mostrar los eventos en el recinto
+                        List<Evento> eventosEnRecinto = recintoSeleccionado.getEventos();
+                        
+                        if (!eventosEnRecinto.isEmpty()) {
+                            System.out.println("Eventos en el recinto " + recintoSeleccionado.getId() + " - " + recintoSeleccionado.getUbicacion() + ":");
+                            for (Evento evento : eventosEnRecinto) {
+                                System.out.println("ID: " + evento.getId());
+                                System.out.println("Nombre: " + evento.getNombre());
+                                System.out.println("Fecha: " + evento.getFecha());
+                                System.out.println("Asistentes: " + evento.getCantidadAsistentes());
+                                System.out.println("-----------------------------");
+                            }
+                        } else {
+                            System.out.println("No hay eventos asignados en el recinto " + recintoSeleccionado.getId());
+                        }
+                    } else {
+                        System.out.println("Recinto no encontrado. Verifique el ID ingresado.");
+                    }
+                    break;
+
                     // Aquí puedes buscar el recinto por su ID y mostrar sus eventos
                     // Puedes implementar esta lógica utilizando las clases y métodos adecuados
                     // Por ejemplo, puedes iterar sobre los eventos del recinto y mostrar sus
                     // detalles.
-
-                    break;
                 case 2:
                     System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
                     scanner.close();
@@ -48,5 +71,18 @@ public class Main {
                     break;
             }
         }
+        
     }
+
+    private static Recinto buscarRecintoPorID(int idRecinto, List<Pais> paises) {
+        for (Pais pais : paises) {
+            for (Recinto recinto : pais.getRecintos()) {
+                if (recinto.getId() == idRecinto) {
+                    return recinto;
+                }
+            }
+        }
+        return null; // Retorna null si el recinto no se encuentra
+    }
+    
 }
