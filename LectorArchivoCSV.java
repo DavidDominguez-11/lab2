@@ -74,7 +74,7 @@ public class LectorArchivoCSV {
                     paisExistente.getUbicaciones().add(ubicacionExistente);
                 }
 
-                Recinto recinto = new Recinto(idRecinto, ubicacionExistente.getNombre_ubicacion(), capacidad);
+                Recinto recinto = new Recinto(idRecinto, ubicacionExistente.getNombre_ubicacion(), capacidad, idPais);
                 ubicacionExistente.getRecintos().add(recinto);
             }
             recintosReader.close();

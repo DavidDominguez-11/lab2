@@ -69,4 +69,8 @@ public class Evento {
         return null;
     }
 
+    public Object getUbicacion() {
+        return null;
+    }
+
 }

@@ -6,6 +6,7 @@ public class Recinto {
     private String ubicacion;
     private int capacidad;
     private List<Evento> eventos;
+    private int idPais;
 
     public int getId() {
         return id;
@@ -39,10 +40,11 @@ public class Recinto {
         this.eventos = eventos;
     }
 
-    public Recinto(int id, String ubicacion, int capacidad) {
+    public Recinto(int id, String ubicacion, int capacidad, int idPais) {
         this.id = id;
         this.ubicacion = ubicacion;
         this.capacidad = capacidad;
+        this.idPais = idPais;
         this.eventos = new ArrayList<>();
     }
 
@@ -66,14 +68,14 @@ public class Recinto {
             }
         }
     }
-    private Pais pais;
+    private int pais;
 
-    public Pais getPais() {
+    public int getPais() {
         return pais;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setPais(int i) {
+        this.pais = i;
     }
 
     // Otros métodos, como getters y setters.

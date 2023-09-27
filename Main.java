@@ -10,7 +10,7 @@ public class Main {
         LectorArchivoCSV.cargarRecintosDesdeCSV("recinto.csv", paises);
         // Crear algunos objetos de ejemplo
         String ubicacion1 = "Ubicación 1";
-        Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
+        Recinto recinto1 = new Recinto(1, ubicacion1, 1000, 10);
 
         // Asignar el evento al recinto
         // recinto1.agregarEvento(evento1); este ya no es el metodo
