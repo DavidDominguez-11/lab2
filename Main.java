@@ -1,8 +1,11 @@
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String path = "evento.csv";
         // Crear algunos objetos de ejemplo
         String ubicacion1 = "Ubicación 1";
         Recinto recinto1 = new Recinto(1, ubicacion1, 1000);
@@ -19,7 +22,8 @@ public class Main {
 
         // Asignar el evento al recinto
         // recinto1.agregarEvento(evento1); este ya no es el metodo
-        recinto1.asignarEventos();
+        List<Evento> eventos = LectorArchivoCSV.cargarEventosDesdeCSV(path);
+        recinto1.asignarEventos(eventos);
 
         // Crear un objeto Scanner para recibir la entrada del usuario
         Scanner scanner = new Scanner(System.in);

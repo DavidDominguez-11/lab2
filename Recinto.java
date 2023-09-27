@@ -49,7 +49,7 @@ public class Recinto {
     public Recinto() {
     }
 
-    public void asignarEventos(ArrayList<Evento> eventos) {
+    public void asignarEventos(List<Evento> eventos) {
         for (Evento evento : eventos) {
             // verificar si el recinto tiene capacidad para el evento
             if (this.capacidad >= evento.getCantidadAsistentes()) {
